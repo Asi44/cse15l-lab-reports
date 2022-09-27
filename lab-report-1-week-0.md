@@ -1,3 +1,3 @@
-Here is my screenshot
+## Screenshot
 ![Image](screenshot.png)
 
