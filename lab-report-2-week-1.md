@@ -12,7 +12,10 @@
 
 ## Connecting Remotely
 
-* First, look up your account at https://sdacs.ucsd.edu/~icc/index.php and reset your password for your CSE15L account. It will take a few hours to reset.
+* First, look up your account at https://sdacs.ucsd.edu/~icc/index.php.
+You will find it under "Additional Accounts", and it will look something like cse15lfa22zz, except with the "zz" replaced with unique letters that represent your account. Reset the password for this account. It will take a few hours to reset.
+
+
 
 * Next, click on Terminal in VS Code and select New Terminal. Then type in:
 
@@ -30,7 +33,14 @@ This will connect you to the remote computer.
 
 
 ## Trying Some Commands
-* Once connected you can try out some commands on the remote shell. For example, ls will list the files in the directory, cd will navigate to a new place and ~ will take you to the home directory. You can also use "exit" to leave the remote shell and return to your pc.
+* Once connected you can try out some commands on the remote shell. 
+* For example, ls will list the files in the directory, cd will navigate to a new place and ~ will take you to the home directory. 
+* You can also use "exit" to leave the remote shell and return to your pc.
+
+![Image](s9.png)
+![Image](s10.png)
+![Image](s11.png)
+
 
 
 ## Moving Files with scp
@@ -68,6 +78,7 @@ Enter your password when prompted. This should  copy the public key to the remot
 
 
 ## Optimizing Remote Running
+* Now that you no longer need to enter a password, it takes less keystrokes to do things
 
 * You can execute multiple commands at once by using a semicolon between commands
 
@@ -76,6 +87,18 @@ Enter your password when prompted. This should  copy the public key to the remot
 * If you put commands run on remote shell in quotation marks, it runs those commands then exits the remote shell. For example:
 
  ![Image](s8.png)
+
+* This can help optimize remote running by performing multiple operations at once. So, to make a local edit to a file, copy it to the remote server, compile and run, this is what I did, which was much quicker:
+
+First I made a small edit to the file by adding the output "Finished running program" atthe end:
+
+![Image](s12.png)
+
+Then I navigated to the directory which the file was saved in and ran commands on one line which did everything at once, including exiting and returning to the local terminal:
+
+![Image](s13.png)
+
+
 
 
 
