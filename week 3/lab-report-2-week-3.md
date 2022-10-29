@@ -84,3 +84,64 @@ class SearchEngine {
 * It checks if the query of the url contains "add" or "search". Since it contains search, it puts the string "app" into parameters[1]. It also creates a new arrayList called foundStrs to store the strings which contain the substring to search for.
 * It then iterates through strs, which is currently [apple, hello, pineapple, apps, app, banana]. If strs[i] contains parameters[1], it adds strs[i] to foundStrs.
 * Once it is done processing, it returns foundStrs. strs does not change.
+
+
+## Part 2
+
+For ArrayExamples, this is the test which failed: 
+
+```
+@Test 
+	public void testReverseInPlaceMany() {
+    int[] input1 = {1, 2, 3};
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{3, 2, 1},   input1);
+	}
+```
+![Image](4.png)
+
+* The failure-inducing input for ReverseInPlace was {1, 2, 3}
+* The symptom was that instead of giving {3, 2, 1}, it gave {3, 2, 3}
+* I fixed it by adding a temporary array and assigning it to arr once things were reversed.
+![Image](5.png)
+* The bug was that the contents of the original array were being changed before everything could be reversed. So values were “disappearing” and then the wrong value was being copied.
+
+For ListExamples, this is the test which failed:
+
+```
+@Test
+    public void testFilter() {
+        List<String> list1 = new ArrayList<>();
+        startsWithA aStart = new startsWithA();
+        list1.add("apple");
+        list1.add("ball");
+        list1.add("cat");
+        list1.add("ant");
+        List<String> list2 = new ArrayList<>();
+        list2.add("apple");
+        list2.add("ant");
+
+        assertEquals(ListExamples.filter(list1, aStart), list2);
+       
+    }
+```
+* The failure-inducing input was the list [apple, ball, cat, ant] and a startsWithA object. 
+* The symptom was that it should have returned [apple, ant], but instead returned it in a reversed order as [ant, apple].
+
+![Image](6.png)
+
+*The fix is to remove the index 0 from add in the filter method of the ListExamples class. This will make it so that it adds the filtered strings in the correct order, at the end of the list.
+
+![Image](7.png)
+
+```
+        result.add(0,s);
+
+```
+should be changed to
+```
+        result.add(s);
+```
+
+* The bug is that it iterated through the provided list, and as it found matching words, it added them to the beginning of the new list instead of the end. The 0 made it so that the strings were prepended to the list. So it reversed the order.
+
