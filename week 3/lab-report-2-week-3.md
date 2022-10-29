@@ -100,8 +100,8 @@ For ArrayExamples, this is the test which failed:
 ```
 ![Image](4.png)
 
-* The failure-inducing input for ReverseInPlace was {1, 2, 3}
-* The symptom was that instead of giving {3, 2, 1}, it gave {3, 2, 3}
+* The failure-inducing input for ReverseInPlace was the array returned when the array {1, 2, 3} was passed to reverseInPlace
+* The symptom was that instead of returning {3, 2, 1}, it returned {3, 2, 3}
 * I fixed it by adding a temporary array and assigning it to arr once things were reversed.
 ![Image](5.png)
 * The bug was that the contents of the original array were being changed before everything could be reversed. So values were “disappearing” and then the wrong value was being copied.
@@ -121,11 +121,11 @@ For ListExamples, this is the test which failed:
         list2.add("apple");
         list2.add("ant");
 
-        assertEquals(ListExamples.filter(list1, aStart), list2);
+        assertEquals(list2, ListExamples.filter(list1, aStart));
        
     }
 ```
-* The failure-inducing input was the list [apple, ball, cat, ant] and a startsWithA object. 
+* The failure-inducing input was the filtered list returned when filter was called with the arguments of this list: [apple, ball, cat, ant] and a startsWithA object. 
 * The symptom was that it should have returned [apple, ant], but instead returned it in a reversed order as [ant, apple].
 
 ![Image](6.png)
