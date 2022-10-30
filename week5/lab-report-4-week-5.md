@@ -1,4 +1,4 @@
-# Lab Report 3
+# Week 5 Lab Report
 
 ### The command I will be researching is grep
 
