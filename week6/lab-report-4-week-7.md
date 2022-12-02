@@ -15,35 +15,35 @@ Keys typed to make the change:
 
 (27 keys total)
 
-1. Opening vim on DocSearchServer.java and the cursor is at the beginning of the file:
+Opening vim on DocSearchServer.java and the cursor is at the beginning of the file:
 
 ![Image](Picture1.png)
 
-2. Type /tec and `<enter>`. This makes vim look for the string "tec" and takes the cursor to the first instance of it:
+Type /tec and `<enter>`. This makes vim look for the string "tec" and takes the cursor to the first instance of it:
 
 ![Image](Picture2.png)
 
-3. Press n to jump to the next instance of "tec":
+Press n to jump to the next instance of "tec":
 
 ![Image](Picture3.png)
 
-4. Type dw to delete the word
+Type dw to delete the word
 
 ![Image](Picture4.png)
 
-5. Type "lli" to go left twice and then enter insert mode:
+Type "lli" to go left twice and then enter insert mode:
 
 ![Image](Picture5.png)
 
-6. Backspace five times to delete everything in the brackets:
+Backspace five times to delete everything in the brackets:
 
 ![Image](Picture6.png)
 
-7. type in "args[1]"
+type in "args[1]"
 
 ![Image](Picture7.png)
 
-8. Press `<esc>` to exit insert mode, and then type ":wq " and `<enter>` to save and exit vim.
+Press `<esc>` to exit insert mode, and then type ":wq " and `<enter>` to save and exit vim.
 
 ![Image](Picture8.png)
 
