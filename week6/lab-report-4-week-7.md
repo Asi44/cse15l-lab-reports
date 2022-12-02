@@ -8,7 +8,10 @@ The change I made was :
 
 Keys typed to make the change: 
 
-`/`tec`<enter>`ndwlli`<backspace><backspace><backspace><backspace><backspace>`args[1]`<esc>`:wq`<enter>`
+```
+\tec<enter>ndwlli<backspace><backspace><backspace><backspace><backspace>args[1]<esc>:wq<enter>
+
+```
 
 (27 keys total)
 
@@ -17,9 +20,11 @@ Keys typed to make the change:
 ![Image](Picture1.png)
 
 2. Type /tec and `<enter>`. This makes vim look for the string "tec" and takes the cursor to the first instance of it:
+
 ![Image](Picture2.png)
 
 3. Press n to jump to the next instance of "tec":
+
 ![Image](Picture3.png)
 
 4. Type dw to delete the word
